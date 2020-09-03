@@ -1,0 +1,177 @@
+# functional-calculator-with-Javascript
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>My calculator</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<div id="demo">
+
+<h4>Bucz calculator 2020</h4>
+<br><button class="gee"onclick="date()">show time</button>
+<input type="text1" id="hey"><br>
+<input type="text" readonly size="14" id="result">
+
+<table style="width:100%;">
+<tr>
+<td><button type="button" onclick="v('9')">9</button></td>
+
+<td><button type="button" onclick="v('8')">8</button></td>
+
+<td><button type="button" onclick="v('7')">7</button></td>
+
+<td><button type="button" class="butt" onclick="v('/')">/</button></button></td>
+    </tr>
+    <tr>
+<td><button type="button"onclick="v('6')">6</button></td>
+
+<td><button type="button"onclick="v('5')">5</button></td>
+<td><button type="button"onclick="v('4')">4</button></td> 
+<td><button type="button" class="butt"onclick="v('*')">*</button></td> 
+
+</tr>
+<tr>
+<td><button type="button"onclick="v('3')">3</button></td>
+<td><button type="button"onclick="v('2')">2</button></td>
+
+<td><button type="button" onclick="v('1')">1</button></td>
+<td><button type="button" class="butt"onclick="v('+')">+</button></button></td>
+</tr>
+    <tr>
+<td><button type="button"onclick="v('0')">0</button></td>
+<td><button type="button"onclick="v('.')">.</button></td>
+<td><button type="button" onclick="cos()">cos</button></td>
+<td><button type="button"class="butt"onclick="v('-')">-</button></td>
+</tr>
+<tr>
+<td><button type="button" onclick="sqr()">²√</button></td>
+<td><button type="button"onclick="tan()">tan</button></td>
+<td><button type="button" onclick="sin()">sin</button></td>
+<td><button type="button" class="butt" onclick="solve()">=</button></td>
+</tr>
+<tr>
+<td><button type="button" onclick="atan()">exp</button></td>
+<td><button type="button" onclick="log()">log</button></td>
+<td><button type="button" onclick="cube()">³√</button></td>
+<td><button type="button" onclick="abs()">abs</button></td></tr>
+<p align="center">
+<button type="button" class="butt" onclick="C('')">clear</button>
+
+</table>
+</div>
+</body>
+</html>
+<style>
+
+input[type=text]{background-color:black;
+color:white;
+width:100%;
+height:50px;
+border-radius:10px;    
+text-align:right;
+font-size:40px;} 
+input[type=text1]{height:30px;
+width:90px;
+margin:9px;
+border-radius:10px;
+background-color:#000000;
+float:right;
+font-size:20px;
+font-family:'digital-7' sans-serif;
+border:4px solid red;
+color:#66ff99;
+}
+
+.gee{background-color:black;
+width:80px;
+border-radius:3px;
+height:40px;
+}
+
+
+
+
+button{background-color:black;
+color:white;
+width:35px;
+height:30px;
+border-radius:50%;
+font-size:15px;}
+
+#demo{background-color:#000133;
+height:465px;
+width:300px;
+border-radius:10px;
+border:5px solid black;}
+
+.butt{width:70px;
+height:35px;
+background-color:red;
+border-radius:6px;
+color:black;
+font-size:20px;}
+
+table{border-spacing:5px;}
+
+h4{background-color:green;
+color:black;
+text-align:center;
+margin:1px;}
+
+
+</style>
+<script type="text/javascript">
+function v(val){document.getElementById("result").value+=val;}
+
+
+function C(val){document.getElementById("result").value=val;}
+
+function solve(){try{C(eval(document.getElementById("result").value))}catch(solve){C('Invalid')}}
+
+
+function tan(){var y=document.getElementById("result").value;
+document.getElementById("result").value=Math.tan(y*Math.PI/180);}
+ 
+function sqr(){var s=document.getElementById("result").value;
+document.getElementById("result").value=Math.sqrt(s);}
+
+function cos(){var c=document. getElementById("result").value;
+document.getElementById("result").value=Math.cos(c*Math.PI/180);}
+
+function sin(){var x=document.getElementById("result").value;
+document.getElementById("result").value=Math.sin(x*Math.PI/180);}
+
+function exp(){var at=document.getElementByld("result").value;
+document.getElementByld("result").value=Math.exp(at);}
+
+function log(){var lg=document.getElementById("result").value;
+document. getElementById("result").value=Math.log(lg);}
+
+function cube(){var c=document.getElementById("result").value;
+document.getElementById("result").value=Math.cbrt(c);}
+
+function abs(){var abs=document.getElementById("result").value;
+document.getElementById("result").value=Math.abs(abs);}
+
+function date(){var x= new Date();
+var hrs=x.getHours();
+var min=x.getMinutes();
+var secs=x.getSeconds();
+var ampm="AM";
+
+if(hrs>=12){ampm="PM";}
+if(hrs>12){hrs=hrs-12;}
+if(hrs==0){hrs=12;}
+if(hrs<10){hrs="0"+hrs;}
+
+if(min<10){min="0"+min;}
+if(secs<10){secs="0"+secs}
+
+
+document.getElementById("hey").value=hrs+":"+min+""+ampm;}
+setInterval(date,500);
+</script>
+</body>
+</html>
